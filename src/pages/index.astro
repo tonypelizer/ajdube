@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ScrollButton from '../components/ScrollButton.astro';
+import projects from '../data/projects';
+---
+
+<BaseLayout
+  title="Tony Dube — Software Engineer"
+  description="Portfolio of Tony Dube — software engineer building reliable tools for everyday use."
+>
+  <section class="hero">
+    <h1>I design and build software for everyday use.</h1>
+    <p>
+      Currently working at <a
+        href="https://dairyone.com"
+        target="_blank"
+        rel="noopener noreferrer">Dairy One</a
+      >.
+    </p>
+  </section>
+
+  {projects.map((project) => <ProjectCard project={project} />)}
+
+  <ScrollButton />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 20vh 0;
+    animation: fadeInScale 0.8s ease-out;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 10vh 0px;
+    }
+  }
+
+  .hero h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

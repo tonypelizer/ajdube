@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import tonydubePhoto from '../assets/tonydube.png';
+---
+
+<BaseLayout
+  title="About — Tony Dube"
+  description="About Tony Dube — software engineer at Dairy One, building reliable tools for everyday use from Vermont."
+>
+  <section class="about-section">
+    <div class="about-content">
+      <h2>Hi there!</h2>
+      <p>
+        I’m a software engineer at <a
+          href="https://dairyone.com"
+          target="_blank"
+          rel="noopener noreferrer">Dairy One</a
+        >, where I build systems and tools that support everyday, production
+        use, with a focus on reliability and long-term maintainability. I
+        currently work remotely from a small town in Vermont.
+      </p>
+
+      <h3 class="section-heading">About</h3>
+
+      <p>
+        I’ve been building things on the web since childhood, starting with
+        HTML, CSS, and JavaScript on a shared family computer. That early
+        curiosity grew into a long-term interest in how software actually
+        behaves once it’s in real use.
+      </p>
+
+      <p>
+        My background is a mix of formal study and hands-on learning. I studied
+        computer science at community college and later at the University of New
+        Hampshire, and I’ve continued learning primarily by building, shipping,
+        and maintaining real systems.
+      </p>
+
+      <p>
+        Outside of work, I’m a husband and a dad. We also have a dog and a cat.
+        I enjoy spending time outdoors, playing music, reading science fiction,
+        rock climbing, woodworking, and occasional target practice.
+      </p>
+
+      <h3 class="section-heading">Say Hello</h3>
+
+      <p>
+        If you want to connect, or just say hi: <a
+          href="mailto:anthony.j.dube@gmail.com">anthony.j.dube@gmail.com</a
+        >.
+      </p>
+    </div>
+
+    <div class="about-photo">
+      <Image src={tonydubePhoto} alt="Tony Dube" />
+    </div>
+  </section>
+
+  <style>
+    .about-section {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
+      align-items: start;
+      padding-top: 140px;
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    .about-section h2 {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(30px, 8vw, 50px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+    }
+
+    .section-heading {
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.11rem;
+      letter-spacing: 0.11rem;
+      text-transform: uppercase;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+
+    .about-content {
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: 0.05rem;
+      font-weight: 300;
+      margin-bottom: 200px;
+    }
+
+    .about-content p a {
+      border-bottom: 1px solid var(--text);
+    }
+
+    .about-photo {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      align-self: start;
+      position: sticky;
+      top: 140px;
+    }
+
+    .about-photo img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-photo {
+        order: -1;
+        position: static;
+      }
+
+      .about-photo img {
+        max-width: 320px;
+      }
+    }
+  </style>
+</BaseLayout>
