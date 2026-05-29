@@ -94,7 +94,7 @@ const projects: Project[] = [
     url: 'https://clawbin.com',
     urlLabel: 'Go to site',
     comingSoon: true,
-    image: 'clawbin-desktop.png',
+    image: 'clawbin-mobile.png',
     mobileImage: 'clawbin-desktop.png',
     overlayImage: 'clawbin-mobile.png',
     mobileOverlayOnly: true,
