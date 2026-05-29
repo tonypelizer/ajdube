@@ -49,15 +49,23 @@ if (project.overlayImage) {
       <p class="role">{project.role}, {project.period}</p>
       <p class="work-desc">{project.description}</p>
       <div class="button-group">
-        <a
-          href={project.url}
-          class="get-app-button"
-          {...project.url.startsWith('http')
-            ? { target: '_blank', rel: 'noopener noreferrer' }
-            : {}}
-        >
-          {project.urlLabel}
-        </a>
+        {
+          project.comingSoon ? (
+            <span class="get-app-button get-app-button--disabled">
+              Coming soon
+            </span>
+          ) : (
+            <a
+              href={project.url}
+              class="get-app-button"
+              {...(project.url.startsWith('http')
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+            >
+              {project.urlLabel}
+            </a>
+          )
+        }
         {
           project.caseStudyUrl && (
             <a href={project.caseStudyUrl} class="case-study-button">
@@ -199,6 +207,18 @@ if (project.overlayImage) {
   .get-app-button:focus-visible {
     outline: 2px solid var(--text);
     outline-offset: 2px;
+  }
+
+  .get-app-button--disabled {
+    background: #d0d0d0;
+    color: #888;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .get-app-button--disabled:hover {
+    background: #d0d0d0;
+    transform: none;
   }
 
   .button-group {

@@ -17,6 +17,8 @@ export interface Project {
   imageAlt?: string;
   /** Internal route to a dedicated case study page, e.g. '/work/ourvio' */
   caseStudyUrl?: string;
+  /** When true, renders the primary button as a disabled "Coming soon" indicator. */
+  comingSoon?: boolean;
 }
 
 const projects: Project[] = [
@@ -83,15 +85,22 @@ const projects: Project[] = [
   //   url: 'https://wordrover.com',
   //   urlLabel: 'Go to site',
   // },
-  // {
-  //   slug: 'clawbin',
-  //   title: 'Clawbin',
-  //   role: 'Independent Developer',
-  //   period: '2026 – Now',
-  //   description: 'A community platform for discovering and sharing AI prompts.',
-  //   url: 'https://clawbin.com',
-  //   urlLabel: 'Go to site',
-  // },
+  {
+    slug: 'clawbin',
+    title: 'Clawbin',
+    role: 'Independent Developer',
+    period: '2026 – Now',
+    description: 'A community platform for discovering and sharing AI prompts.',
+    url: 'https://clawbin.com',
+    urlLabel: 'Go to site',
+    comingSoon: true,
+    image: 'clawbin-desktop.png',
+    mobileImage: 'clawbin-desktop.png',
+    overlayImage: 'clawbin-mobile.png',
+    mobileOverlayOnly: true,
+    imageAlt:
+      'Screenshot of the Clawbin platform for discovering and sharing AI prompts',
+  },
 ];
 
 export default projects;
