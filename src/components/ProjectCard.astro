@@ -162,8 +162,9 @@ if (project.overlayImage) {
   }
 
   #clawbin .work-image-main {
-    max-height: 80vh;    transform: translateX(-40px);    filter:
-      drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08))
+    max-height: 80vh;
+    transform: translateX(-40px);
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08))
       drop-shadow(0 2px 8px rgba(0, 0, 0, 0.05));
   }
 
@@ -265,8 +266,8 @@ if (project.overlayImage) {
   @media (max-width: 768px) {
     .work {
       min-height: 100vh;
-      padding: 40px 0;
-      justify-content: center;
+      padding: 20px 0 40px;
+      justify-content: flex-start;
     }
 
     .work-content {
@@ -303,6 +304,10 @@ if (project.overlayImage) {
 
     .work-image-overlay--mobile-only {
       display: block;
+    }
+
+    #clawbin .work-image-main {
+      transform: none;
     }
 
     .work-text {
