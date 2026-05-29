@@ -8,6 +8,12 @@ export interface Project {
   urlLabel: string;
   /** Path is relative to src/assets/. Leave empty if no image yet. */
   image?: string;
+  /** Optional alternative image to use on mobile viewports. */
+  mobileImage?: string;
+  /** Optional small image to overlay on top of the main image. */
+  overlayImage?: string;
+  /** When true, the overlay is only shown on mobile viewports. */
+  mobileOverlayOnly?: boolean;
   imageAlt?: string;
   /** Internal route to a dedicated case study page, e.g. '/work/ourvio' */
   caseStudyUrl?: string;
@@ -25,6 +31,9 @@ const projects: Project[] = [
     urlLabel: 'Go to site',
     caseStudyUrl: '/work/ourvio',
     image: 'ourvio.png',
+    mobileImage: 'ourvio-dashboard-2.png',
+    overlayImage: 'ourvio.png',
+    mobileOverlayOnly: true,
     imageAlt:
       'Screenshot of the Ourvio application showing group accountability dashboard',
   },
@@ -49,6 +58,9 @@ const projects: Project[] = [
     url: 'https://emulos.com',
     urlLabel: 'Go to site',
     image: 'emulos.png',
+    mobileImage: 'emulos-2.png',
+    overlayImage: 'emulos.png',
+    mobileOverlayOnly: true,
     imageAlt:
       'Screenshot of the Emulos application showing the clinical decision simulation interface',
   },
@@ -69,6 +81,15 @@ const projects: Project[] = [
   //   period: '2025 – Now',
   //   description: 'A location-based word collection game.',
   //   url: 'https://wordrover.com',
+  //   urlLabel: 'Go to site',
+  // },
+  // {
+  //   slug: 'clawbin',
+  //   title: 'Clawbin',
+  //   role: 'Independent Developer',
+  //   period: '2026 – Now',
+  //   description: 'A community platform for discovering and sharing AI prompts.',
+  //   url: 'https://clawbin.com',
   //   urlLabel: 'Go to site',
   // },
 ];
