@@ -350,6 +350,26 @@ html, body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
+@media (max-width: 768px) {
+  #achievement-container {
+    bottom: auto;
+    left: 50%;
+    top: calc(80px + env(safe-area-inset-top));
+    transform: translateX(-50%);
+    align-items: center;
+  }
+  .achievement-toast {
+    min-width: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    text-align: center;
+  }
+  @keyframes toast-slide-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
 /* ── Abduction flash ── */
 #abduction-flash {
   position: fixed;
