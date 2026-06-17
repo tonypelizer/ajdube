@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import photo from '../assets/tonydube.png';
+import photoDark from '../assets/tonydube.png';
+import photoLight from '../assets/tonydubelight.png';
 ---
 
 <!doctype html>
@@ -178,6 +179,16 @@ import photo from '../assets/tonydube.png';
         border-radius: 50%;
         object-fit: cover;
         object-position: center;
+        display: block;
+      }
+
+      .avatar-dark {
+        display: none;
+      }
+      [data-theme='dark'] .avatar-light {
+        display: none;
+      }
+      [data-theme='dark'] .avatar-dark {
         display: block;
       }
 
@@ -774,7 +785,8 @@ import photo from '../assets/tonydube.png';
       <!-- ══════════════════ SIDEBAR ══════════════════ -->
       <aside class="sidebar">
         <div class="avatar-wrapper">
-          <Image src={photo} alt="Tony Dube" class="avatar" />
+          <Image src={photoLight} alt="Tony Dube" class="avatar avatar-light" />
+          <Image src={photoDark} alt="Tony Dube" class="avatar avatar-dark" />
         </div>
 
         <div class="info-block">
